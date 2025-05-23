@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Télécharger PRUMS</title>
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(userAgent)) {
+        // Android
+        window.location.href = "https://play.google.com/store/apps/details?id=com.prums.ares&hl=fr";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // iOS
+        window.location.href = "https://apps.apple.com/fr/app/prums/id6446317916";
+      } else {
+        // Ordinateur ou système inconnu : redirige vers une page informative
+        document.getElementById("fallback").style.display = "block";
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="fallback" style="display: none; text-align: center; padding: 50px;">
+    <h1>PRUMS</h1>
+    <p>Merci de visiter depuis un appareil mobile pour télécharger l'application PRUMS.</p>
+    <p>Ou téléchargez directement :</p>
+    <p>
+      <a href="https://apps.apple.com/fr/app/prums/id6446317916">App Store (iPhone)</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.prums.ares&hl=fr">Google Play (Android)</a>
+    </p>
+  </div>
+</body>
+</html>
 
